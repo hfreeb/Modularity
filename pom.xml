@@ -24,7 +24,7 @@
         <dependency>
             <groupId>org.atteo.classindex</groupId>
             <artifactId>classindex</artifactId>
-            <version>3.3</version>
+            <version>3.4</version>
         </dependency>
 
         <dependency>
@@ -33,13 +33,6 @@
             <version>1.11-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
             <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -54,6 +47,44 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <version>2.4.3</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <dependencyReducedPomLocation>${project.build.directory}/dependency-reduced-pom.xml</dependencyReducedPomLocation>
+
+                            <transformers>
+                                <transformer implementation="org.atteo.classindex.ClassIndexTransformer"/>
+                            </transformers>
+
+                            <artifactSet>
+                                <includes>
+                                    <include>com.google.guava:guava</include>
+                                    <include>com.google.inject:guice</include>
+                                    <include>org.atteo.classindex:classindex</include>
+                                    <include>javax.inject:javax.inject</include>
+                                    <include>aopalliance:aopalliance</include>
+                                </includes>
+                            </artifactSet>
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.atteo.classindex</groupId>
+                        <artifactId>classindex-transformer</artifactId>
+                        <version>3.4</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
