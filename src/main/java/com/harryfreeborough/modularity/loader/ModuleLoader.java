@@ -72,19 +72,33 @@ public class ModuleLoader {
     /**
      * Loads all the {@link Module}s found in the current classpath, matching the set
      * filter and enabled from the set {@link ModuleConfig}.
+     * Uses the {@link ClassLoader} used to load {@link ModuleLoader}.
      *
      * @return the created {@link Injector} to be used for manual injection
      */
     public Injector load() {
+        return this.load(ModuleLoader.class.getClassLoader());
+    }
+
+    /**
+     * Loads all the {@link Module}s found in the current classpath, matching the set
+     * filter and enabled from the set {@link ModuleConfig}.
+     *
+     * @param classLoader uses the specified {@link ClassLoader} to find the {@link Module}s list
+     * @return the created {@link Injector} to be used for manual injection
+     */
+    public Injector load(ClassLoader classLoader) {
         List<com.google.inject.Module> injectorModules = new ArrayList<>();
         injectorModules.add(new ModularityGuiceModule());
         injectorModules.addAll(this.injectorModules);
 
-        List<Class<?>> modules = Lists.newArrayList(ClassIndex.getAnnotated(Module.class, ModuleLoader.class.getClassLoader())).stream()
+        List<Class<?>> modules = Lists.newArrayList(ClassIndex.getAnnotated(Module.class, classLoader)).stream()
                 .filter(this.moduleFilter::matches)
                 .collect(Collectors.toList());
 
         List<Class<?>> toLoad = new ArrayList<>();
+
+        this.moduleConfig.initialize();
 
         for (Class<?> module : modules) {
             Module annotation = module.getAnnotation(Module.class);
@@ -111,6 +125,8 @@ public class ModuleLoader {
                 toLoad.add(module);
             }
         }
+
+        this.moduleConfig.close();
 
         Injector injector = Guice.createInjector(injectorModules);
         for (Class<?> module : toLoad) {

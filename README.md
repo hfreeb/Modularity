@@ -9,7 +9,7 @@ Modularity is a Java Modules Framework which allows the easy use of modular piec
 
 How to use
 -------------
-To get started you can visit the [wiki](https://github.com/Desetude/Modularity/wiki) which shows you how to install and use Modularity.
+To get started you can visit the [wiki](wiki) which shows you how to install and use Modularity.
 
 JavaDocs
 --------
@@ -17,7 +17,7 @@ JavaDocs are currently not set up.
 
 Change Log
 -----------
-See [CHANGELOG](https://github.com/Desetude/Modularity/CHANGELOG.md) to view the full change log.
+See [CHANGELOG](CHANGELOG.md) to view the full change log.
 
 License
 ----------
