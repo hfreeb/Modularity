@@ -20,7 +20,6 @@ import java.io.File;
  * {@link Plugin} -> The given {@link Plugin} instance.
  * {@link Server} -> The Bukkit {@link Server} instance.
  * {@link PluginManager} -> The Bukkit {@link PluginManager} instance.
- * {@link File} annotated with {@link DataDir} -> The given {@link Plugin} instance's data directory.
  *
  * Also, this module will register any of the {@link com.desetude.modularity.Module}s or
  * {@link AutoRegister}s as {@link Listener}s if they {@code implement} it.
@@ -38,7 +37,6 @@ public class BukkitGuiceModule extends AbstractModule {
         this.bind(Plugin.class).toInstance(this.plugin);
         this.bind(Server.class).toProvider(this.plugin::getServer);
         this.bind(PluginManager.class).toProvider(this.plugin.getServer()::getPluginManager);
-        this.bind(File.class).annotatedWith(DataDir.class).toProvider(this.plugin::getDataFolder);
 
         this.bindListener(Matchers.any(), new ListenerTypeListener());
     }
