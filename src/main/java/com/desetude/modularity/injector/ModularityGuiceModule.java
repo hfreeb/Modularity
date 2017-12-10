@@ -1,8 +1,8 @@
-package com.harryfreeborough.modularity.injector;
+package com.desetude.modularity.injector;
 
+import com.desetude.modularity.Module;
 import com.google.inject.AbstractModule;
 import com.google.inject.Scopes;
-import com.harryfreeborough.modularity.Module;
 
 /**
  * Basic Guice {@link com.google.inject.Module} that binds {@link Module} and {@link AutoRegister}

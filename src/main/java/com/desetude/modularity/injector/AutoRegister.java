@@ -1,11 +1,11 @@
-package com.harryfreeborough.modularity.injector;
+package com.desetude.modularity.injector;
 
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import com.google.inject.Module;
 import com.google.inject.ScopeAnnotation;
-import com.harryfreeborough.modularity.additionalmodules.BukkitGuiceModule;
+import com.desetude.modularity.additionalmodules.BukkitGuiceModule;
 import org.bukkit.event.Listener;
 
 import java.lang.annotation.Retention;

@@ -1,13 +1,13 @@
-package com.harryfreeborough.modularity.loader;
+package com.desetude.modularity.loader;
 
+import com.desetude.modularity.Module;
+import com.desetude.modularity.config.ModuleConfig;
+import com.desetude.modularity.config.SimpleModuleConfig;
+import com.desetude.modularity.injector.AutoRegister;
+import com.desetude.modularity.injector.ModularityGuiceModule;
 import com.google.common.collect.Lists;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.harryfreeborough.modularity.Module;
-import com.harryfreeborough.modularity.config.ModuleConfig;
-import com.harryfreeborough.modularity.config.SimpleModuleConfig;
-import com.harryfreeborough.modularity.injector.AutoRegister;
-import com.harryfreeborough.modularity.injector.ModularityGuiceModule;
 import org.atteo.classindex.ClassFilter;
 import org.atteo.classindex.ClassIndex;
 

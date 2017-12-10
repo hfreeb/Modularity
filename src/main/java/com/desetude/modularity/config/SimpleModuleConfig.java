@@ -1,6 +1,6 @@
-package com.harryfreeborough.modularity.config;
+package com.desetude.modularity.config;
 
-import com.harryfreeborough.modularity.Module;
+import com.desetude.modularity.Module;
 
 /**
  * Simple {@link ModuleConfig} implementation where each {@link Module}

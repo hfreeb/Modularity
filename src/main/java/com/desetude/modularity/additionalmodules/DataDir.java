@@ -1,4 +1,4 @@
-package com.harryfreeborough.modularity.additionalmodules;
+package com.desetude.modularity.additionalmodules;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;

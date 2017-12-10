@@ -1,5 +1,6 @@
-package com.harryfreeborough.modularity.additionalmodules;
+package com.desetude.modularity.additionalmodules;
 
+import com.desetude.modularity.injector.AutoRegister;
 import com.google.inject.AbstractModule;
 import com.google.inject.Module;
 import com.google.inject.TypeLiteral;
@@ -7,7 +8,6 @@ import com.google.inject.matcher.Matchers;
 import com.google.inject.spi.InjectionListener;
 import com.google.inject.spi.TypeEncounter;
 import com.google.inject.spi.TypeListener;
-import com.harryfreeborough.modularity.injector.AutoRegister;
 import org.bukkit.Server;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
@@ -22,7 +22,7 @@ import java.io.File;
  * {@link PluginManager} -> The Bukkit {@link PluginManager} instance.
  * {@link File} annotated with {@link DataDir} -> The given {@link Plugin} instance's data directory.
  *
- * Also, this module will register any of the {@link com.harryfreeborough.modularity.Module}s or
+ * Also, this module will register any of the {@link com.desetude.modularity.Module}s or
  * {@link AutoRegister}s as {@link Listener}s if they {@code implement} it.
  */
 public class BukkitGuiceModule extends AbstractModule {

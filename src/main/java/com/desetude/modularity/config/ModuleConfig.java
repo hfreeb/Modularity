@@ -1,6 +1,6 @@
-package com.harryfreeborough.modularity.config;
+package com.desetude.modularity.config;
 
-import com.harryfreeborough.modularity.Module;
+import com.desetude.modularity.Module;
 
 /**
  * Configuration for whether each {@link Module} is enabled.

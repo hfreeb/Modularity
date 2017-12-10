@@ -1,9 +1,9 @@
-package com.harryfreeborough.modularity;
+package com.desetude.modularity;
 
+import com.desetude.modularity.config.ModuleConfig;
 import com.google.inject.ScopeAnnotation;
-import com.harryfreeborough.modularity.additionalmodules.BukkitGuiceModule;
-import com.harryfreeborough.modularity.config.ModuleConfig;
-import com.harryfreeborough.modularity.loader.ModuleLoader;
+import com.desetude.modularity.additionalmodules.BukkitGuiceModule;
+import com.desetude.modularity.loader.ModuleLoader;
 import org.atteo.classindex.IndexAnnotated;
 import org.bukkit.event.Listener;
 
