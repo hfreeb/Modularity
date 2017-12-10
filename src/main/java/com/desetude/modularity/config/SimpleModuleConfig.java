@@ -15,11 +15,6 @@ public class SimpleModuleConfig implements ModuleConfig {
     }
 
     @Override
-    public void setDefault(String name, String description, boolean defaultValue) {
-
-    }
-
-    @Override
     public boolean isEnabled(String name) {
         return true;
     }

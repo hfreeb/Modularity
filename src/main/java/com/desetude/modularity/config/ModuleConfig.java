@@ -23,15 +23,6 @@ public interface ModuleConfig {
     boolean isSet(String name);
 
     /**
-     * Sets the default value of the {@link Module} with the specified name.
-     *
-     * @param name of the {@link Module} to set default value of
-     * @param description to be used for comments on the entry, can be ignored
-     * @param defaultValue to set
-     */
-    void setDefault(String name, String description, boolean defaultValue);
-
-    /**
      * States whether the {@link Module} with the specified name is enabled
      * and therefore should be loaded.
      *

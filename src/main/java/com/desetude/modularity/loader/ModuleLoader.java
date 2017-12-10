@@ -103,14 +103,10 @@ public class ModuleLoader {
         for (Class<?> module : modules) {
             Module annotation = module.getAnnotation(Module.class);
 
-            boolean enabled = annotation.enabled();
+            boolean enabled = true;
 
             if (this.moduleConfig.isSet(annotation.name())) {
                 enabled = this.moduleConfig.isEnabled(annotation.name());
-            } else {
-                if (!annotation.hidden()) {
-                    this.moduleConfig.setDefault(annotation.name(), annotation.desc(), annotation.enabled());
-                }
             }
 
             if (enabled) {

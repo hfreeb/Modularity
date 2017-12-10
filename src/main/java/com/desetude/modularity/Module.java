@@ -50,14 +50,6 @@ public @interface Module {
     boolean enabled() default true;
 
     /**
-     * States whether {@code this} {@link Module} is hidden and therefore should
-     * not be set in the {@link ModuleConfig} by default.
-     *
-     * @return whether {@code this} {@link Module} should be hidden from {@link ModuleConfig}
-     */
-    boolean hidden() default false;
-
-    /**
      * Returns the list of any additional Guice {@link com.google.inject.Module}s that should
      * be loaded for the {@link Module} class's injection.
      *
